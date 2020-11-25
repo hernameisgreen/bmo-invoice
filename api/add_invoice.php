@@ -35,8 +35,8 @@ $sql="INSERT INTO `invoice` (`".implode("`,`",array_keys($_POST))."`)  values ('
 /* 如果沒有任何錯誤產生在err陣列中，就表示資料無誤可以新增了 */
 if (empty($_SESSION['err'])){
     $pdo->exec($sql);
-    header("location: ../latest_invoice.php");
+    header("location: ?go=../latest_invoice.php");
 }else{
-    header("location: ../index.php");
+    header("location: ?go=../dashboard.php");
 }
 

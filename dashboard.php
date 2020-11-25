@@ -20,7 +20,7 @@
                         <li class="nav-item"><a class="nav-link lk-txt" href="?go=latest_invoice">當期發票</a></li>
                         <li class="nav-item"><a class="nav-link lk-txt" href="?go=check_prize">對獎</a></li>
                         <li class="nav-item"><a class="nav-link lk-txt" href="?go=add_prize_number">新增獎號</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="index.php">回首頁</a></li>
+                        <li class="nav-item"><a class="nav-link lk-txt" href="dashboard.php">回首頁</a></li>
                         <li class="nav-item"></li>
                     </ul>
                 </div>
