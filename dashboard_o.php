@@ -10,26 +10,23 @@
 </head>
 
 <body>
-   <!--  <nav class="navbar sticky-top  flex-md-no bg-light" id="top-bar">
-    </nav> -->
+    <nav class="navbar sticky-top  flex-md-no" id="top-bar">
+    </nav>
     <div class="container-fluid">
         <div class="row">
             <nav class="flex-column col-2 sidebar" id="sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column justify-content-center mt-3 text-light list-bar">
-                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=add_record">+</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=records">records</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=latest_invoice">latest invoice lottery</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=check_prize">check for prizes</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=add_prize_number">add new prize numbers</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=summary">summary</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="dashboard.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=latest_invoice">當期發票</a></li>
+                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=check_prize">對獎</a></li>
+                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=add_prize_number">新增獎號</a></li>
+                        <li class="nav-item"><a class="nav-link lk-txt" href="dashboard.php">回首頁</a></li>
                         <li class="nav-item"></li>
                     </ul>
                 </div>
             </nav>
-            <div class="col-10 plaza d-flex">
-                <div class="main-area mx-auto my-auto mall shadow">
+            <div class="col-10 main-section">
+                <div class="main-area mx-auto my-auto">
                     <?php
                     if (isset($_GET['go'])) {
                         $file = ($_GET['go']) . ".php";
