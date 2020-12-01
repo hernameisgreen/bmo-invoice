@@ -12,6 +12,7 @@
             height: 60%;
             border: 1px white solid;
             border-radius: 10px;
+            line-height:1.5;
         }
         th,td{
             border: 1px white solid;
@@ -21,7 +22,7 @@
 </head>
 
 <!-- class="table table-bordered" -->
-
+<form action="" method="post"></form>
 <table class="mx-auto mt-3"> 
    <tbody>
     <tr> 
@@ -72,6 +73,9 @@
     <tr> 
      <th id="addSixPrize">增開六獎</th> 
      <td headers="addSixPrize" class="number"> 651、341 </td> 
+    </tr>
+    <tr>
+
     </tr> 
    </tbody>
   </table> 

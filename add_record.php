@@ -15,18 +15,12 @@ function errmsg($item)
 ?>
 
 <head>
-    <style>
-        form {
-            height: 100%;
-            width: 60%;
-            margin-top: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="css/add_record.css">
 </head>
 <form action="api/add_invoice.php" method="post" class="mx-auto">
     <div class="form-row">
         <div class="form-group col-6">
-            <label for="date">日期</label>
+            <label for="date" class="text-muted">日期</label>
             <input type="date" name="date" class="form-control">
             <?= errmsg('date') ?>
         </div>
@@ -63,37 +57,35 @@ function errmsg($item)
         </div>
         <div class="form-group col-6">
             <label for="type">消費類型</label>
-            <div class="form-check-inline form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="type" id="" value="income"> 收入
-                </label>
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="type" id="" value="expense"> 支出
-                </label>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-6">
-                <label for="category">種類</label>
-                <select name="category">
-                    <option value="breakfast">早餐</option>
-                    <option value="lunch">午餐</option>
-                    <option value="dinner">晚餐</option>
-                </select>
-            </div>
-
-
-            <div class="form-group col-6">
-                <label for="method">付款方式</label>
-                <select>
-                    <option value="cash">現金</option>
-                    <option value="credit">信用卡</option>
-                    <option value="easy card">悠遊卡</option>
-                    <option value="online">行動支付</option>
-                </select>
-            </div>
+            <select name="type" class="in_type">
+                <option value="0">收入</option>
+                <option value="1">支出</option>
+            </select>
         </div>
     </div>
+    <div class="form-row">
+        <div class="form-group col-6  ">
+            <label for="category" 　class="cat-label">　種類　</label>
+            <select name="category">
+                <option value="breakfast">早餐</option>
+                <option value="lunch">午餐</option>
+                <option value="dinner">晚餐</option>
+                <option value="dinner">其他項目</option>
+            </select>
+        </div>
+
+
+        <div class="form-group col-6">
+            <label for="method">付款方式</label>
+            <select>
+                <option value="cash">現金</option>
+                <option value="credit">信用卡</option>
+                <option value="easy card">悠遊卡</option>
+                <option value="online">行動支付</option>
+            </select>
+        </div>
+    </div>
+    <!--  </div> -->
     <div class="form-row">
         <div class="form-group col-12">
             <label for="notes">備註</label>
@@ -101,9 +93,20 @@ function errmsg($item)
 
         </div>
     </div>
+    <div class="form-row">
+
+
+        <input type="submit" value="submit" class="sub-btn">
+
+
+
+
+        <input type="reset" value="reset" class="reset-btn">
+
+
     </div>
     </div>
-    <input type="submit" value="submit" class="btn btn-success">
-    <input type="reset" value="reset" class="btn btn-warning">
+    </div>
+    </div>
 
 </form>

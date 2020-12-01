@@ -24,6 +24,7 @@
                         <li class="nav-item"><a class="nav-link lk-txt" href="?go=add_prize_number">add new prize numbers</a></li>
                         <li class="nav-item"><a class="nav-link lk-txt" href="?go=summary">summary</a></li>
                         <li class="nav-item"><a class="nav-link lk-txt" href="dashboard.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link lk-txt" href="index.php">logout</a></li>
                         <li class="nav-item"></li>
                     </ul>
                 </div>
