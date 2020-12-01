@@ -1,28 +1,15 @@
 <?php
 include_once "api/settings.php";
 /* $sql="select `date`.`invoice`, `item`.`invoice_details`, `type`.`invoice_details`, `category`.`invoice_details`, `method`.`invoice_details`, `notes`.`invoice_details` from `invoice`, `invoice_details`"; */
-$sql = "select `invoice`.`date`, `invoice_details`.`item`, `invoice_details`.`type`, `invoice_details`.`category`, `invoice_details`.`method`, `invoice_details`.`notes` from `invoice`, `invoice_details`";
+$sql = "select `invoice`.`date`, `invoice_details`.`item`, `invoice`.`payment`,`invoice_details`.`type`, `invoice_details`.`category`, `invoice_details`.`method`, `invoice_details`.`notes` from `invoice`, `invoice_details`";
 ?>
 
 <head>
-    <style>
-        body {
-            background-color: red;
-        }
-
-        .container {
-            background-color: white;
-        }
-
-        tr,
-        td {
-            border: 1px solid black;
-        }
-    </style>
+<link rel="stylesheet" href="css/record.css">
 </head>
 
 <body>
-    <table>
+    <table class="record_list table-bordered mx-auto" >
         <tr>
             <th>日期</th>
             <th>消費項目</th>
@@ -31,6 +18,7 @@ $sql = "select `invoice`.`date`, `invoice_details`.`item`, `invoice_details`.`ty
             <th>種類</th>
             <th>付款方式</th>
             <th>備註</th>
+            <th>編輯</th>
         </tr>
         <?php
 
@@ -40,12 +28,17 @@ $sql = "select `invoice`.`date`, `invoice_details`.`item`, `invoice_details`.`ty
             echo "<td>" . $row['date'] . "</td>";
             echo "<td>" . $row['item'] . "</td>";
             echo "<td>" . $row['type'] . "</td>";
+            echo "<td>" . $row['payment'] . "</td>";
             echo "<td>" . $row['category'] . "</td>";
             echo "<td>" . $row['method'] . "</td>";
             echo "<td>" . $row['notes'] . "</td>";
+            echo "<td>" ."<a class='btn' href='api/edit_record.php>"."edit"."</a>". 
+            "<a class='btn' href='api/delete_record.php'>"."delete"."</a>".
+            "</td>";
             echo "</tr>";
         }
         ?>
+    
 
     </table>
 </body>
