@@ -55,33 +55,30 @@ function errmsg($item)
             <input type="number" name="payment" class="form-control" min="1">
             <?= errmsg('payment') ?>
         </div>
-        <div class="form-group col-6">
-            <label for="type">消費類型</label>
-            <select name="type" class="in_type">
-                <option value="0">收入</option>
-                <option value="1">支出</option>
-            </select>
-        </div>
+      <!--   <div class="form-group col-6">
+            <label for="item">支出項目</label>
+            
+        </div> -->
     </div>
     <div class="form-row">
         <div class="form-group col-6  ">
             <label for="category" 　class="cat-label">　種類　</label>
             <select name="category">
-                <option value="breakfast">早餐</option>
-                <option value="lunch">午餐</option>
-                <option value="dinner">晚餐</option>
-                <option value="dinner">其他項目</option>
+                <option value="1">早餐</option>
+                <option value="2">午餐</option>
+                <option value="3">晚餐</option>
+                <option value="4">其他項目</option>
             </select>
         </div>
 
 
         <div class="form-group col-6">
             <label for="method">付款方式</label>
-            <select>
-                <option value="cash">現金</option>
-                <option value="credit">信用卡</option>
-                <option value="easy card">悠遊卡</option>
-                <option value="online">行動支付</option>
+            <select name="method">
+                <option value="1">現金</option>
+                <option value="2">信用卡</option>
+                <option value="3">悠遊卡</option>
+                <option value="4">行動支付</option>
             </select>
         </div>
     </div>

@@ -20,7 +20,7 @@
     </style>
 </head>
 <form action="api/add_prize_numb.php" method="post" class="">
-<table class="mx-auto mt-3"> 
+<table class="mx-auto mt-3 h-100 w-60"> 
    <tbody>
     <tr> 
      <th id="months">年月份</th> 
@@ -97,7 +97,7 @@
     </tr> 
    </tbody>
   </table> 
-  <div class="mt-3 mx-auto">
+  <div class=" mt-3 mx-auto w-100 h-30">
       <input type="submit" value="submit">
       <input type="reset" value="reset">
   </div>

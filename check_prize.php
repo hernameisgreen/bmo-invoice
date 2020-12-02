@@ -1,4 +1,6 @@
-
+<head>
+    <link rel="stylesheet" href="check_prize.css">
+</head>
 
 <form action="check_prize.php" method="post">
 <input type="number" name="year" min="<?=date('Y')-1?>" step="1" max="<?=date('Y')+1?>"> 
@@ -10,9 +12,26 @@
     <option value="5">九，十月</option>
     <option value="6">十，十一月</option>
 </select>
+<input type="submit" value="送出">
 </form>
 <table>
 <?php
+include_once "api/settings.php";
+if(empty ($_POST['year']) && empty ($_POST['period'])){
+    $all="select date, period, code, number from `invoice` order by date desc";
+    $cribs=$pdo->query($all)->fetchALL(pdo::FETCH_ASSOC);
+    foreach($cribs as $crib){
+        echo "<tr>";
+        echo "<td>" . $crib['date'] . "</td>";
+        echo "<td>" . $crib['period'] . "</td>";
+        echo "<td>" . $crib['code'] . "</td>";
+        echo "<td>" . $crib['number'] . "</td>";   
+        echo "<td>" ."</td>";
+        echo "</tr>";
+    
+}}else{
+
+
 $year=$_POST['year'];
 $period=$_POST['period'];
 
@@ -26,12 +45,12 @@ foreach($numbs as $numb){
     echo "<td>" . $numb['period'] . "</td>";
     echo "<td>" . $numb['code'] . "</td>";
     echo "<td>" . $numb['number'] . "</td>";
-
     echo "<td>" ."</td>";
     echo "</tr>";
 
 
 
+}
 }
 ?>
 

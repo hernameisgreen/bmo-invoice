@@ -20,14 +20,42 @@
         }
     </style>
 </head>
+<?php
+include_once "api/settings.php";
+$period_now=(ceil(date('m')/2))-1;
+$year_now=date('Y');
+$sql="select * from `award_numbers` where `period`='$period_now' and `year`='$year_now'";
+$selection=$pdo->query($sql)->fetchALL(pdo::FETCH_ASSOC);
+switch($period_now){
+    case "1":
+        echo "1~2月";
+    break;
+    case "2":
+        echo "3~4月";
+    break;
+    case "3":
+        echo "5~6月";
+    break;
+    case "4":
+        echo "7~8月";
+    break;
+    case "5":
+        echo "9~10月";
+    break;
+    case "6":
+        echo "11~12月";
+    break;
 
+}
+
+?>
 <!-- class="table table-bordered" -->
 <form action="" method="post"></form>
 <table class="mx-auto mt-3"> 
    <tbody>
     <tr> 
      <th id="months">年月份</th> 
-     <td headers="months" class="title"> 109年 09 ~ 10 月 </td> 
+     <td headers="months" class="title"> <?=$year_now?>年<?=$period_now?>月 </td> 
     </tr> 
     <tr> 
      <th id="specialPrize" rowspan="2">特別獎</th> 
