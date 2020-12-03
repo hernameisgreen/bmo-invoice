@@ -26,4 +26,4 @@ foreach($_POST['addSixPrize'] as $six){
     }
 }
 echo "新增完成";
-header("location:../dashboard.php?go=latest_invoice");
+header("location:../dashboard.php?go=latest_invoice&pd='.$year'.'-'.'$period'");

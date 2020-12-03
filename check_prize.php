@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="check_prize.css">
 </head>
 
-<form action="check_prize.php" method="post">
+<form action="val_prize.php" method="post">
 <input type="number" name="year" min="<?=date('Y')-1?>" step="1" max="<?=date('Y')+1?>"> 
 <select name="period">
     <option value="1">一，二月</option>

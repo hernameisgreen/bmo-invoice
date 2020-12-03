@@ -22,58 +22,82 @@
 </head>
 <?php
 include_once "api/settings.php";
-$period_now=(ceil(date('m')/2))-1;
-$year_now=date('Y');
-$sql="select * from `award_numbers` where `period`='$period_now' and `year`='$year_now'";
-$selection=$pdo->query($sql)->fetchALL(pdo::FETCH_ASSOC);
-switch($period_now){
-    case "1":
-        echo "1~2月";
-    break;
-    case "2":
-        echo "3~4月";
-    break;
-    case "3":
-        echo "5~6月";
-    break;
-    case "4":
-        echo "7~8月";
-    break;
-    case "5":
-        echo "9~10月";
-    break;
-    case "6":
-        echo "11~12月";
-    break;
 
+if(isset($_GET['pd'])){
+    $year=explode("-", $_GET['pd'])[0];
+    $period=explode("-", $_GET['pd'])[1];
+}else{
+    $sql="select * from award_numbers order by year desc, period desc limit 1";
+    $sql=$pdo->query($sql)->fetch(pdo::FETCH_ASSOC);
+    $year=$sql['year'];
+    $period=$sql['period'];
 }
+$month=[
+1=>"一，二",
+2=>"三，四",
+3=>"五，六",
+4=>"七，八",
+5=>"九，十",
+6=>"十一，十二"
 
+];
+
+$this_month=$month[$period];
+
+
+$awards="select * from `award_numbers` where `year`='$year' and `period`='$period'";
+$awards=$pdo->query($awards)->fetchAll(pdo::FETCH_ASSOC);
+foreach ($awards as $award){
+    switch($award['type']){
+        case 1:
+            $specialPrize=$award['number'];
+        break;
+        case 2:
+            $grandPrize=$award['number'];
+        break;
+        case 3:
+            $firstPrize[]=$award['number'];
+        break;
+        case 4:
+            $six[]=$award['number'];
+        break;
+    }
+}
 ?>
+
+
+
 <!-- class="table table-bordered" -->
 <form action="" method="post"></form>
 <table class="mx-auto mt-3"> 
    <tbody>
     <tr> 
      <th id="months">年月份</th> 
-     <td headers="months" class="title"> <?=$year_now?>年<?=$period_now?>月 </td> 
+     <td headers="months" class="title"> <?=$year?>年<?=$this_month?>月 </td> 
     </tr> 
     <tr> 
      <th id="specialPrize" rowspan="2">特別獎</th> 
-     <td headers="specialPrize" class="number"> 42024723 </td> 
+     <td headers="specialPrize" class="number"> <?=$specialPrize?> </td> 
     </tr> 
     <tr> 
      <td headers="specialPrize"> 同期統一發票收執聯8位數號碼與特別獎號碼相同者獎金1,000萬元 </td> 
     </tr> 
     <tr> 
      <th id="grandPrize" rowspan="2">特獎</th> 
-     <td headers="grandPrize" class="number"> 64157858 </td> 
+     <td headers="grandPrize" class="number"> <?=$grandPrize?> </td> 
     </tr> 
     <tr> 
      <td headers="grandPrize"> 同期統一發票收執聯8位數號碼與特獎號碼相同者獎金200萬元 </td> 
     </tr> 
     <tr> 
      <th id="firstPrize" rowspan="2">頭獎</th> 
-     <td headers="firstPrize" class="number"> <p>68550826</p> <p>84643124</p> <p>46665810</p> <p></p> </td> 
+     <td headers="firstPrize" class="number"> 
+         <?php
+         foreach($firstPrize as $first){
+             echo $first."<br>";
+         }
+         ?>
+     </td> 
     </tr> 
     <tr> 
      <td headers="firstPrize"> 同期統一發票收執聯8位數號碼與頭獎號碼相同者獎金20萬元 </td> 
@@ -100,10 +124,18 @@ switch($period_now){
     </tr> 
     <tr> 
      <th id="addSixPrize">增開六獎</th> 
-     <td headers="addSixPrize" class="number"> 651、341 </td> 
+     <td headers="addSixPrize" class="number">
+         <?php
+         foreach($six as $s){
+             echo $s."<br>";
+         }
+         ?>
+     </td> 
     </tr>
     <tr>
 
     </tr> 
    </tbody>
   </table> 
+<button><a href="?go=latest_invoice&pd='.$year'.'-'.'($period-1)'">prev</a></button>
+<button><a href="?go=latest_invoice&pd='.$year'.'-'.'($period+1)'">next</a></button>

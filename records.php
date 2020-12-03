@@ -1,7 +1,7 @@
 <?php
 include_once "api/settings.php";
 /* $sql="select `date`.`invoice`, `item`.`invoice_details`, `type`.`invoice_details`, `category`.`invoice_details`, `method`.`invoice_details`, `notes`.`invoice_details` from `invoice`, `invoice_details`"; */
-$sql = "select `invoice`.`date`, `invoice`.`payment`, `invoice_details`.`category`, `invoice_details`.`method`, `invoice_details`.`notes` from `invoice`, `invoice_details`where `invoice`.`user_id`='$_SESSION[user_id]'";
+$sql = "select `invoice`.`date`, `invoice`.`payment`, `invoice_details`.`category`, `invoice_details`.`method`, `invoice_details`.`notes` from `invoice`, `invoice_details`where `invoice`.`user_id`='$_SESSION[user_id]' and `invoice`.`id`=`invoice_details`.`in_id`";
 ?>
 
 <head>
