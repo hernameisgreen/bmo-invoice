@@ -137,5 +137,16 @@ foreach ($awards as $award){
     </tr> 
    </tbody>
   </table> 
+
+<!-- <?php
+if($period+1>6){?>
+   <a href="?go=latest_invoice&pd='.<?=$year+1?>'.'-'.'1'">next</a>
+<?php}else{?>
+<a href="?go=latest_invoice&pd='.<?=$year?>'.'-'.'<?=$period+1?>'">next</a>
+<?php
+}
+?> -->
+
 <button><a href="?go=latest_invoice&pd='.$year'.'-'.'($period-1)'">prev</a></button>
 <button><a href="?go=latest_invoice&pd='.$year'.'-'.'($period+1)'">next</a></button>
+<!-- <a href="?go=latest_invoice&pd='.<?=$year?>'.'-'.'<?=($period-1)?>"> -->

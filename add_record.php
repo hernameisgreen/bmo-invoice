@@ -55,7 +55,7 @@ function errmsg($item)
             <input type="number" name="payment" class="form-control" min="1">
             <?= errmsg('payment') ?>
         </div>
-      <!--   <div class="form-group col-6">
+        <!--   <div class="form-group col-6">
             <label for="item">支出項目</label>
             
         </div> -->
@@ -94,10 +94,6 @@ function errmsg($item)
 
 
         <input type="submit" value="submit" class="sub-btn">
-
-
-
-
         <input type="reset" value="reset" class="reset-btn">
 
 

@@ -1,0 +1,8 @@
+*{
+    overflow:scroll(y);
+}
+
+.rec_table>tr,td{
+    border: 1px black solid;
+    background-color: pink;
+}

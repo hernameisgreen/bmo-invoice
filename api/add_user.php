@@ -1,7 +1,8 @@
 <?php
 include_once"settings.php";
 
-$name=$_POST['name'];
+$first_name=$_POST['first_name'];
+$last_name=$_POST['last_name'];
 $birthday=$_POST['birthday'];
 $username=$_POST['username'];
 $pw=$_POST['pw'];
@@ -15,7 +16,7 @@ $user="select * from `acc_basic` where `username`='$username' &&`pw`='$pw'";
 $user=$pdo->query($user)->fetch();
 $acc_id=$user['id'];
 
-$sql="insert into `acc_info` (`name`, `birthday`, `location`, `acc_id`) values ('$name', '$birthday', '$location', '$acc_id');";
+$sql="insert into `acc_info` (`first_name`,`last_name`, `birthday`, `location`, `acc_id`) values ('$first_name','$last_name', '$birthday', '$location', '$acc_id');";
 
 $result=$pdo->exec($sql);
 

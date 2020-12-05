@@ -18,13 +18,13 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column justify-content-center mt-3 text-light list-bar">
                         <li class="nav-item"><a class="nav-link lk-txt" href="?go=add_record">+</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=records">records</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=latest_invoice">latest invoice lottery</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=check_prize">check for prizes</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=add_prize_number">add new prize numbers</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=summary">summary</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="dashboard.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link lk-txt" href="index.php">logout</a></li>
+                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=records">帳目紀錄</a></li>
+                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=latest_invoice">最新獎號</a></li>
+                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=check_prize">對獎</a></li>
+                        <li class="nav-item"><a class="nav-link lk-txt" href="?go=add_prize_number">新增獎號</a></li>
+                       <!--  <li class="nav-item"><a class="nav-link lk-txt" href="?go=summary">summary</a></li> -->
+                        <li class="nav-item"><a class="nav-link lk-txt" href="dashboard.php">回首頁</a></li>
+                        <li class="nav-item"><a class="nav-link lk-txt" href="index.php">登出</a></li>
                         <li class="nav-item"></li>
                     </ul>
                 </div>
