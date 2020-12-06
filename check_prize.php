@@ -2,7 +2,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/check_prize.css">
 </head>
-<div class="container h-100 w-100">
+<div class="container vh-100 vw-100">
+
 <form action="api/val_prize.php" method="post" class="sub-form" class="d-block mx-auto">
 <input type="number" name="year" min="<?=date('Y')-1?>" step="1" max="<?=date('Y')+1?>"> 
 <select name="period">
@@ -15,7 +16,8 @@
 </select>
 <input type="submit" value="送出">
 </form>
-<table class="rec_table table">
+
+<table class="rec_table">
 <?php
 include_once "api/settings.php";
 $_SESSION['congrats']=[];

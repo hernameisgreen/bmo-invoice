@@ -1,7 +1,7 @@
 <?php
 include_once "api/settings.php";
-/* $sql="select `date`.`invoice`, `item`.`invoice_details`, `type`.`invoice_details`, `category`.`invoice_details`, `method`.`invoice_details`, `notes`.`invoice_details` from `invoice`, `invoice_details`"; */
-$sql = "select `invoice`.`date`, `invoice`.`payment`, `invoice_details`.`category`, `invoice_details`.`method`, `invoice_details`.`notes` from `invoice`, `invoice_details`where `invoice`.`user_id`='$_SESSION[user_id]' and `invoice`.`id`=`invoice_details`.`in_id`";
+
+$sql = "select `invoice`.`date`, `invoice`.`payment`, `invoice_details`.`category`, `invoice_details`.`method`, `invoice_details`.`notes` from `invoice`, `invoice_details`where `invoice`.`user_id`='$_SESSION[user_id]' and `invoice`.`id`=`invoice_details`.`in_id` order by `invoice`.`date` desc";
 ?>
 
 <head>
@@ -9,7 +9,7 @@ $sql = "select `invoice`.`date`, `invoice`.`payment`, `invoice_details`.`categor
 </head>
 
 <body>
-    <h2>歷史紀錄</h2>
+    <h2 class="mx-auto text-center">歷史紀錄</h2>
     <table class="record_list table-bordered mx-auto" >
         <tr>
             <th>日期</th>
@@ -22,6 +22,11 @@ $sql = "select `invoice`.`date`, `invoice`.`payment`, `invoice_details`.`categor
         <?php
 
         $rows = $pdo->query($sql)->fetchALL(pdo::FETCH_ASSOC);
+        $row_count=(count($rows));
+        $results_per_page=10;
+        $number_of_pages=ceil($row_count/$results_per_page);
+        /* echo ($number_of_pages); */
+       
         foreach ($rows as $row) {
             echo "<tr>";
             echo "<td>" . $row['date'] . "</td>";

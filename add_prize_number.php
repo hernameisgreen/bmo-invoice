@@ -1,32 +1,21 @@
-
+<?php
+include_once "api/settings.php";
+?>
 <head>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <style>
-        *{
-            font-family: 'Noto Sans TC', sans-serif;
-        }
-        table{
-            width: 50%;
-            height: 50%;
-            border: 1px white solid;
-            border-radius: 10px;
-        }
-        th,td{
-            border: 1px white solid;
-            background-color: #ccbdc0;
-        }
-    </style>
+ <link rel="stylesheet" href="css/add_prize_number.css">
 </head>
-<form action="api/add_prize_numb.php" method="post" class="">
-<table class="mx-auto mt-3 h-100 w-60"> 
+<h2 class="text-center mt-3">新增獎號</h2>
+<form action="api/add_prize_numb.php" method="post" class="form-trial h-100 w-100">
+<table class="mx-auto mt-3 "> 
    <tbody>
     <tr> 
      <th id="months">年月份</th> 
      <td headers="months" class="title">
          <input type="number" name="year" min="<?=date('Y')-1;?>" max="<?=date('Y')+1;?>" step="1">年
-         <select name="period">
+         <select name="period" class="period">
              <option value="1">一，二月</option>
              <option value="2">三，四月</option>
              <option value="3">五，六月</option>
@@ -60,7 +49,7 @@
      <input type="number" name="firstPrize[]" min="00000001" max="99999999">
      <input type="number" name="firstPrize[]" min="00000001" max="99999999">
      <input type="number" name="firstPrize[]" min="00000001" max="99999999">
-     <input type="number" name="firstPrize[]" min="00000001" max="99999999">
+     <input type="number" name="firstPrize[]" min="00000001" max="99999999" class="extra mt-1">
     </td> 
     </tr> 
     <tr> 
@@ -97,8 +86,8 @@
     </tr> 
    </tbody>
   </table> 
-  <div class=" mt-3 mx-auto w-100 h-30">
-      <input type="submit" value="submit">
-      <input type="reset" value="reset">
+  <div class=" mt-3 mx-auto form-box">
+      <input type="submit" value="submit" class="sub">
+      <input type="reset" value="reset" class="reset">
   </div>
  </form>

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/latest_invoice.css">
 
 </head>
+<h2 class="text-center">最新獎號</h2>
 <?php
 include_once "api/settings.php";
 
@@ -18,9 +19,9 @@ if(isset($_GET['pd'])){
     $year=$sql['year'];
     $period=$sql['period'];
 }
-echo $year;
+/* echo $year;
 echo '<br>';
-echo $period;
+echo $period; */
 $month=[
 1=>"01,02",
 2=>"03,04",

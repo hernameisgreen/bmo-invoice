@@ -9,11 +9,14 @@ if (empty($_SESSION['congrats'])) {
 } else {
     echo "中獎了!";
 }
+if (is_array($_SESSION['congrats'])){
 foreach (($_SESSION['congrats']) as $congrat) {
     echo "<pre>";
     echo $congrat;
     echo "</pre>";
 }
+}
+if (is_array($_SESSION['congrats'])){
 foreach ($_SESSION['prz_type'] as $type) {
     switch ($type) {
         case -2:
@@ -41,6 +44,7 @@ foreach ($_SESSION['prz_type'] as $type) {
             $money[] = 200;
             break;
     }
+}
 }
 echo array_sum($money) . "元";
 
