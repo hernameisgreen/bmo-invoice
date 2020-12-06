@@ -17,7 +17,7 @@
 <input type="submit" value="送出" class="sub ml-3">
 </form>
 
-<table class="rec_table mt-5">
+<table class="rec_table mt-3">
 <?php
 include_once "api/settings.php";
 $_SESSION['congrats']=[];

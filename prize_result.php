@@ -86,7 +86,15 @@ foreach($prizes as $prize){
 echo "累積獎金: ";
 echo array_sum($money) . "元";
 echo "<br>";
-echo "BMO為你開心";
+if (empty($_SESSION['congrats'])) {
+    echo "BMO為您難過";
+    
+    
+} else {
+    echo "BMO為您開心";
+   
+}
+
 echo "</div>";
 
 

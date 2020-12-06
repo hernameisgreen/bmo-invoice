@@ -52,10 +52,10 @@ $sql = "select `invoice`.`date`, `invoice`.`payment`, `invoice_details`.`categor
                 <a class="text-light" href="?go=edit_record&id=<?=$row['id']?>">edit</a>
             </button>
             <button class="delete ">
-            <a class="text-light" href="?go=api/del_record&id=<?=$row['id']?>">delete</a>
+            <a class="text-light" href="?go=del_record&id=<?=$row['id']?>">delete</a>
             </button>
           <button class="check">
-            <a class="text-light" href="?go=api/check_prize&id=<?=$row['id'];?>">check</a>
+            <a class="text-light" href="?go=check_inv_prize&id=<?=$row['id'];?>">check</a>
             </button> 
 <?php
             echo "</td>";
